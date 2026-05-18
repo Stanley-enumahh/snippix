@@ -65,13 +65,8 @@ export default function Home() {
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        style={{
-          borderBottom: "1px solid var(--border)",
-          padding: "16px 32px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+        className="flex items-center justify-between px-4 lg:px-8 py-4"
+        style={{ borderBottom: "1px solid var(--border)" }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <span
@@ -89,6 +84,7 @@ export default function Home() {
             snippix
           </span>
           <span
+            className="hidden sm:inline"
             style={{
               fontSize: "12px",
               color: "var(--muted-foreground)",
@@ -123,7 +119,7 @@ export default function Home() {
                 style={{ cursor: s < step ? "pointer" : "default" }}
                 onClick={() => s < step && setStep(s as 1 | 2)}
               >
-                {s === 1 ? "1 paste" : "2 style"}
+                {s === 1 ? "01 paste" : "02 style"}
               </motion.span>
               {s === 1 && <span style={{ color: "var(--border)" }}>—</span>}
             </div>
@@ -234,26 +230,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              padding: "32px 24px",
-              display: "grid",
-              gridTemplateColumns: "1fr 300px",
-              gap: "28px",
-              alignItems: "start",
-              height: "calc(100vh - 65px)",
-            }}
+            className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-7 p-4 lg:p-8 max-w-[1200px] mx-auto"
+            style={{ minHeight: "calc(100vh - 65px)" }}
           >
-            {/* Preview — vertically centered */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "100%",
-              }}
-            >
+            {/* Preview */}
+            <div className="flex items-center justify-center w-full">
               <CardPreview
                 code={code}
                 language={language}
@@ -266,16 +247,8 @@ export default function Home() {
               />
             </div>
 
-            {/* Controls — sticky */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "12px",
-                position: "sticky",
-                top: "24px",
-              }}
-            >
+            {/* Controls */}
+            <div className="flex flex-col gap-3 lg:sticky lg:top-6">
               <ControlPanel
                 language={language}
                 onLanguageChange={setLanguage}

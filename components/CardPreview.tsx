@@ -82,9 +82,8 @@ export default function CardPreview({
           background: theme.background,
           padding: pad,
           borderRadius: "16px",
-          minWidth: "480px",
-          maxWidth: "780px",
           width: "100%",
+          maxWidth: "780px",
           boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
         }}
       >
