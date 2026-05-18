@@ -35,6 +35,26 @@ const sourceCodePro = Source_Code_Pro({
 export const metadata: Metadata = {
   title: "Snippix — Code Card Generator",
   description: "Turn code into beautiful shareable cards",
+  openGraph: {
+    title: "Snippix — Code Card Generator",
+    description: "Turn code into beautiful shareable cards",
+    url: "https://snippix-app.vercel.app",
+    siteName: "Snippix",
+    images: [
+      {
+        url: "https://snippix-app.vercel.app/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Snippix — Code Card Generator",
+    description: "Turn code into beautiful shareable cards",
+    images: ["https://snippix-app.vercel.app/og.png"],
+  },
 };
 
 export default function RootLayout({
